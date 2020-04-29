@@ -5,7 +5,13 @@
     <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"/>
     
     <script>
-      function play(path) {{
+      function play(path, div) {{
+        cells = document.getElementsByClassName('round-button')
+          for(let i=0; i<cells.length; i++) {
+              console.log(cells.item(i));
+              cells.item(i).style.color = "black";
+          }
+        div.style.color = "red";
         var player = document.getElementById('player');
         player.src = path;
         player.play();
@@ -46,29 +52,29 @@
   }
 
   .round-button {
-  	box-sizing: border-box;
-  	display:block;
-  	width:30px;
-  	height:30px;
-  	padding-top: 8px;
-  	padding-left: 3px;
-  	line-height: 6px;
-  	border: 1.2px solid #000;
-  	border-radius: 50%;
-  	color: #000;
-  	text-align:center;
-  	background-color: rgba(0,0,0,0.00);
-  	font-size:6px;
+    box-sizing: border-box;
+    display:block;
+    width:30px;
+    height:30px;
+    padding-top: 8px;
+    padding-left: 3px;
+    line-height: 6px;
+    border: 1.2px solid #000;
+    border-radius: 50%;
+    color: #000;
+    text-align:center;
+    background-color: rgba(0,0,0,0.00);
+    font-size:6px;
     box-shadow: 0px 0px 2px rgba(0,0,0,1);
-  	transition: all 0.2s ease;
+    transition: all 0.2s ease;
   }
   .round-button:hover {
-  	background-color: rgba(0,0,0,0.0);
-  	box-shadow: 0px 0px 4px rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0.0);
+    box-shadow: 0px 0px 4px rgba(0,0,0,1);
   }
   .round-button:active {
-  	background-color: rgba(0,0,0,0.01);
-  	box-shadow: 0px 0px 1px rgba(0,0,0,1);
+    background-color: rgba(0,0,0,0.01);
+    box-shadow: 0px 0px 1px rgba(0,0,0,1);
   }
   </style>
   </head>
@@ -125,16 +131,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p293_148-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p293_148-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p293_148.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p234_045-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p234_045-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p234</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p293_148_16k_to_p234.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p293_148_16k_to_p234.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p293_148_22k_to_p234.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p293_148_22k_to_p234.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -151,16 +157,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p288_175-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p288_175-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p288_175.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_100-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_100-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p374</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p288_175_16k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p288_175_16k_to_p374.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p288_175_22k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p288_175_22k_to_p374.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -177,16 +183,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p228_293-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p228_293-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p228_293.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p301_211-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p301_211-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p301</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p228_293_16k_to_p301.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p228_293_16k_to_p301.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p228_293_22k_to_p301.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p228_293_22k_to_p301.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -203,16 +209,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p281_071-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p281_071-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p281_071.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p311_137-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p311_137-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p311</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p281_071_16k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p281_071_16k_to_p311.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p281_071_22k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p281_071_22k_to_p311.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -229,16 +235,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p264_470-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p264_470-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p264_470.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p255_231-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p255_231-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p255</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p264_470_16k_to_p255.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p264_470_16k_to_p255.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p264_470_22k_to_p255.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p264_470_22k_to_p255.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -255,16 +261,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p279_243-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p279_243-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p279_243.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p258_411-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p258_411-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p258</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p279_243_16k_to_p258.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p279_243_16k_to_p258.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p279_243_22k_to_p258.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p279_243_22k_to_p258.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -281,16 +287,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p244_048-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p244_048-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p244_048.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p294_055-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p294_055-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p294</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p244_048_16k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p244_048_16k_to_p294.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p244_048_22k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p244_048_22k_to_p294.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -307,16 +313,16 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p305_397-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p305_397-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p305_397.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_144-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_144-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p374</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p305_397_16k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p305_397_16k_to_p374.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Blow</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p305_397_22k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p305_397_22k_to_p374.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -362,13 +368,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1580_141084_000077_000004-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1580_141084_000077_000004-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 1580_141084_000077_000004-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p335_107-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p335_107-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p335</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1580_141084_000077_000004-22k_to_p335.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1580_141084_000077_000004-22k_to_p335.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -385,13 +391,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_5683_32879_000034_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_5683_32879_000034_000000-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 5683_32879_000034_000000-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p306_276-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p306_276-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p306</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_5683_32879_000034_000000-22k_to_p306.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_5683_32879_000034_000000-22k_to_p306.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -408,13 +414,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_7729_102255_000005_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_7729_102255_000005_000000-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 7729_102255_000005_000000-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p308_372-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p308_372-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p308</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_7729_102255_000005_000000-22k_to_p308.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_7729_102255_000005_000000-22k_to_p308.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -431,13 +437,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000043_000001-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000043_000001-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 260_123288_000043_000001-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p270_294-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p270_294-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p270</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000043_000001-22k_to_p270.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000043_000001-22k_to_p270.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -454,13 +460,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000046_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000046_000000-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 260_123288_000046_000000-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p303_272-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p303_272-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p303</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000046_000000-22k_to_p303.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000046_000000-22k_to_p303.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -477,13 +483,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_2300_131720_000026_000007-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_2300_131720_000026_000007-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 2300_131720_000026_000007-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p313_289-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p313_289-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p313</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_2300_131720_000026_000007-22k_to_p313.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_2300_131720_000026_000007-22k_to_p313.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -500,13 +506,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_121_127105_000042_000003-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_121_127105_000042_000003-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 121_127105_000042_000003-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p311_416-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p311_416-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p311</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_121_127105_000042_000003-22k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_121_127105_000042_000003-22k_to_p311.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -523,13 +529,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1089_134691_000027_000005-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1089_134691_000027_000005-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = 1089_134691_000027_000005-22k.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p314_103-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p314_103-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p314</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1089_134691_000027_000005-22k_to_p314.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1089_134691_000027_000005-22k_to_p314.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -568,13 +574,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p225_149-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p225_149-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p225_149.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p294_364-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p294_364-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p294</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p225_149_22k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p225_149_22k_to_p294.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -593,13 +599,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p300_255-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p300_255-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p300_255.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p249_300-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p249_300-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p249</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p300_255_22k_to_p249.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p300_255_22k_to_p249.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -618,13 +624,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p317_302-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p317_302-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p317_302.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p314_104-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p314_104-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p314</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p317_302_22k_to_p314.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p317_302_22k_to_p314.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
@@ -643,13 +649,13 @@
       <tbody>
         <thead><th></th><th class="audio-header" style="width:50"></th></thead>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p241_112-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p241_112-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Source = p241_112.wav</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p300_283-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p300_283-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Target Speaker = p300</th></tr>
         <tr><td class="audio-cell">
-          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p241_112_22k_to_p300.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p241_112_22k_to_p300.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
           <th class="audio-header">Converted - Cotatron</th></tr>
       </tbody>
     </table>    
