@@ -1,0 +1,671 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Audio samples from Cotatron</title>
+    <link rel="stylesheet" type="text/css" href="./css/stylesheet.css"/>
+    
+    <script>
+      function play(path) {{
+        var player = document.getElementById('player');
+        player.src = path;
+        player.play();
+      }}
+    </script>
+    
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  <style>
+  .audio-cell {
+    /* Center audio widgets in the table cell. */
+    text-align: center;
+    padding-bottom: 1px;
+    padding-top: 1px;
+  }
+  .audio-cell-padded { 
+    text-align: center;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .audio-header {
+    text-align: left;
+    /* Don't wrap header text. */
+    white-space: nowrap;
+    /* Some breaking space between headers for readability. */   
+    padding-right: 5px; 
+    padding-left: 5px; 
+  }
+  .reference-cell {
+    /* For uniformity and to wrap long reference text, limit the reference cell's width. */
+    width: 25%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .sample audio {
+    vertical-align: middle;
+    padding-left: 3px;
+    padding-right: 3px;
+  }
+
+  .round-button {
+  	box-sizing: border-box;
+  	display:block;
+  	width:30px;
+  	height:30px;
+  	padding-top: 8px;
+  	padding-left: 3px;
+  	line-height: 6px;
+  	border: 1.2px solid #000;
+  	border-radius: 50%;
+  	color: #000;
+  	text-align:center;
+  	background-color: rgba(0,0,0,0.00);
+  	font-size:6px;
+    box-shadow: 0px 0px 2px rgba(0,0,0,1);
+  	transition: all 0.2s ease;
+  }
+  .round-button:hover {
+  	background-color: rgba(0,0,0,0.0);
+  	box-shadow: 0px 0px 4px rgba(0,0,0,1);
+  }
+  .round-button:active {
+  	background-color: rgba(0,0,0,0.01);
+  	box-shadow: 0px 0px 1px rgba(0,0,0,1);
+  }
+  </style>
+  </head>
+
+  <body>
+    <audio controls="" id="player"></audio>
+    <article>
+      <header>
+        <h1>Webpage Work In Progress</h1>
+        <h1>Audio samples from "Cotatron: Transcription-Guided Speech Encoder for Any-to-Many Voice Conversion without Parallel Data"</h1>
+      </header>
+    </article>
+    <div><p><b>Paper:</b> <a href="https://arxiv.org/abs/????.?????">arXiv (TBD)</a> (To be submitted at InterSpeech 2020)</p></div>
+    <div><p><b>Authors:</b> Seung-won Park, Doo-young Kim, Myun-chul Joe @ SNU, MINDsLab Inc.</p></div>
+    <div><p><b>Abstract:</b> We propose <i>Cotatron</i>, a transcription-guided speech encoder for speaker-free representation.
+      A voice conversion system is trained to reconstruct speech with Cotatron features, which is similar to previous methods based on Phonetic Posteriorgram (PPG). By training and evaluating our system with 108 speakers from VCTK dataset, we outperform the previous method in terms of speech naturalness and get competitive results on speaker classification accuracy.
+      Our system can also convert speech from speakers that are unseen during training, and use ASR transcription for a fully automated pipeline without losing the performance.</p></div>
+    <p>This page contains a set of audio samples in support of the paper: it is suggested that the reader listen to the samples in conjunction with reading the paper. </br>
+    <b>All utterances were unseen during training. The results are not curated (cherry-picked).</b></p>
+<!-- 
+    <img src="./images/diagram.png" width="600" border="0" class="center">
+    <br>
+    <img src="./images/overall.png" width="600" border="0" class="center"> -->
+    
+    <p class="toc_title">Contents</p>
+    <p>Last updated at 2020.04.29</p>
+    <div id="toc_container">
+    <ul>
+      <li><a href="#m2m"> 1. Many-to-Many Conversion
+      <li><a href="#a2m"> 2. Any-to-Many Conversion
+      <li><a href="#asr"> 3. Use of Automatic Speech Recognition
+      <li><a href="#bonus"> 4. Bonus
+    </ul>
+    </div>
+
+<a name="m2m"><h2>1. Many-to-Many Conversion</h2></a>
+<p>
+  The following audio samples are conversion between randomly selected speech from VCTK test split, which consists of 108 English speakers.
+  Please keep in mind that:
+  <ul>
+    <li>Our Cotatron uses transcription; where Blow doesn't.</li>
+    <li>The sampling rate of audios from Blow (16kHz) and Cotatron (22.05kHz) differs.</li>
+  </ul>
+  
+</p>
+<table>
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">sometimes you get them sometimes you dont</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p293_148-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p293_148.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p234_045-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p234</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p293_148_16k_to_p234.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p293_148_22k_to_p234.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">there is no point in looking any further</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p288_175-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p288_175.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_100-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p374</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p288_175_16k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p288_175_22k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">our task is to complete the picture</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p228_293-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p228_293.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p301_211-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p301</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p228_293_16k_to_p301.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p228_293_22k_to_p301.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">how are you sir ?</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p281_071-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p281_071.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p311_137-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p311</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p281_071_16k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p281_071_22k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">it is an industry failure</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p264_470-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p264_470.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p255_231-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p255</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p264_470_16k_to_p255.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p264_470_22k_to_p255.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">he will go a long way</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p279_243-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p279_243.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p258_411-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p258</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p279_243_16k_to_p258.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p279_243_22k_to_p258.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">in fact they are the future of investment</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p244_048-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p244_048.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p294_055-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p294</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p244_048_16k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p244_048_22k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">she had every right to read the warrant</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/source_p305_397-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p305_397.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/target_p374_144-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p374</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/blow_p305_397_16k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Blow</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/m2m/cota_p305_397_22k_to_p374.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="a2m"><h2>2. Any-to-Many Conversion</h2></a>
+<p>
+  Our Cotatron is able to convert speech from speakers that are unseen during training.
+  We convert randomly selected speech from LibriTTS test-clean into random speakers from VCTK,
+  which is an any-to-many conversion.
+</p>
+<table>
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">I am six feet high, and I could do it with an effort. No one less than that would have a chance.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1580_141084_000077_000004-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 1580_141084_000077_000004-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p335_107-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p335</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1580_141084_000077_000004-22k_to_p335.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">'Can I conjecture why he is gone?' murmured Rachel, still gazing with a wild kind of apathy into distance.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_5683_32879_000034_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 5683_32879_000034_000000-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p306_276-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p306</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_5683_32879_000034_000000-22k_to_p306.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">Among other instrumentalities for executing the bogus laws, the bogus Legislature had appointed one Samuel j Jones sheriff of Douglas county kansas Territory, although that individual was at the time of his appointment, and long afterwards, United States postmaster of the town of Westport, Missouri.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_7729_102255_000005_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 7729_102255_000005_000000-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p308_372-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p308</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_7729_102255_000005_000000-22k_to_p308.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">I could just see my uncle at full length on the raft, and Hans still at his helm and spitting fire under the action of the electricity which has saturated him.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000043_000001-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 260_123288_000043_000001-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p270_294-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p270</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000043_000001-22k_to_p270.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">A fresh noise is heard!</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_260_123288_000046_000000-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 260_123288_000046_000000-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p303_272-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p303</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_260_123288_000046_000000-22k_to_p303.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">They said they 'were sorry'--that is, 'Wall Street sorry'--and refused to pay it.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_2300_131720_000026_000007-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 2300_131720_000026_000007-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p313_289-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p313</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_2300_131720_000026_000007-22k_to_p313.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">It appeared that the narrative he had promised to read us really required for a proper intelligence a few words of prologue. Let me say here distinctly, to have done with it, that this narrative, from an exact transcript of my own made much later, is what I shall presently give.</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_121_127105_000042_000003-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 121_127105_000042_000003-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p311_416-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p311</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_121_127105_000042_000003-22k_to_p311.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">What did it mean?</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/source_1089_134691_000027_000005-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = 1089_134691_000027_000005-22k.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/target_p314_103-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p314</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/a2m/cota_1089_134691_000027_000005-22k_to_p314.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<a name="asr"><h2>3. Use of Automatic Speech Recognition</h2></a>
+<p>
+  Cotatron is robust against word errors of ASR:
+  in this section, we curate an examples of ASR errors and their consequences on conversion results.
+</p>
+<table>
+  <tr>
+    <td class="reference-cell">
+      Ground truth transcription:</br>
+      <span class="text_e2e">shareholders will be asked to approve a new replacement scheme</span></br>
+      Transcription fed by ASR:</br>
+      <span class="text_e2e"><span style="color:red">shelters</span> will be asked to <span style="color:red">prove</span> a new replacement scheme</span></br>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p225_149-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p225_149.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p294_364-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p294</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p225_149_22k_to_p294.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Ground truth transcription:</br>
+      <span class="text_e2e">the site has been fully recorded and surveyed</span></br>
+      Transcription fed by ASR:</br>
+      <span class="text_e2e">the <span style="color:red">sight</span> has been fully recorded and surveyed</span></br>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p300_255-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p300_255.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p249_300-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p249</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p300_255_22k_to_p249.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Ground truth transcription:</br>
+      <span class="text_e2e">the failings are serious</span></br>
+      Transcription fed by ASR:</br>
+      <span class="text_e2e">the <span style="color:red">feelings</span> are serious</span></br>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p317_302-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p317_302.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p314_104-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p314</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p317_302_22k_to_p314.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+  <tr>
+    <td class="reference-cell">
+      Ground truth transcription:</br>
+      <span class="text_e2e">the breakdown was much later in her life</span></br>
+      Transcription fed by ASR:</br>
+      <span class="text_e2e">the breakdown was much <span style="color:red">better</span> in her life</span></br>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/source_p241_112-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = p241_112.wav</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/target_p300_283-22k.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p300</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/asr/cota_p241_112_22k_to_p300.wav')"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+</table>
+
+
+<a name="bonus"><h2>4. Bonus</h2></a>
+work in progress. planning to upload conversion results from famous meme/speech.
+
+
+<p>
+  This page uses a template from the
+  <a href="https://google.github.io/tacotron/publications/location_relative_attention/index.html">project page</a>
+  of Battenberg et al., "Location-Relative Attention Mechanisms For Robust Long-Form Speech Synthesis".
+</p>
+  </body>
+</html>
