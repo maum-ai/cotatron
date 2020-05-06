@@ -93,7 +93,7 @@
       A voice conversion system is trained to reconstruct speech with Cotatron features, which is similar to previous methods based on Phonetic Posteriorgram (PPG). By training and evaluating our system with 108 speakers from VCTK dataset, we outperform the previous method in terms of speech naturalness and get competitive results on speaker classification accuracy.
       Our system can also convert speech from speakers that are unseen during training, and use ASR transcription for a fully automated pipeline without losing the performance.</p></div>
     <p>This page contains a set of audio samples in support of the paper: it is suggested that the reader listen to the samples in conjunction with reading the paper. </br>
-    <b>All utterances were unseen during training, and the results are uncurated (NOT cherry-picked).</b></p>
+    <b>All utterances were unseen during training, and the results are uncurated (NOT cherry-picked), unless specified.</b></p>
 <!-- 
     <img src="./images/diagram.png" width="600" border="0" class="center">
     <br>
@@ -106,7 +106,7 @@
       <li><a href="#m2m"> 1. Many-to-Many Conversion
       <li><a href="#a2m"> 2. Any-to-Many Conversion
       <li><a href="#asr"> 3. Use of Automatic Speech Recognition
-      <li><a href="#bonus"> 4. Bonus
+      <li><a href="#bonus"> 4. Bonus (curated)
     </ul>
     </div>
 
@@ -664,8 +664,58 @@
 </table>
 
 
-<a name="bonus"><h2>4. Bonus</h2></a>
-work in progress. planning to upload conversion results from famous meme/speech.
+<a name="bonus"><h2>4. Bonus (curated)</h2></a>
+<p>
+  We show some entertaining conversion results from the speech of celebrities.
+</p>
+
+<table>
+  <tr>
+    <td class="reference-cell">
+      Transcription fed:</br>
+      <span class="text_e2e">We want to live by each other's happiness, not by each other's misery.</span></br>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/dictator/dictator-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = Charlie Chaplin's speech from "The Great Dictator" <a href="https://youtu.be/w8HdOHrc3OQ?t=28">(YouTube link)</a></th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/dictator/p225_182-22k.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = p225 (from VCTK)</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/dictator/dictator_to_p225.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+  <tr>
+    <td class="reference-cell">
+      Transcription fed (in Korean):</br>
+      <span class="text_e2e">온갖 음해에 시달렸습니다. 여러분 이거 다 거짓말인거 아시죠?</span>
+    </td>
+    <td>    
+    <table>
+      <tbody>
+        <thead><th></th><th class="audio-header" style="width:50"></th></thead>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/mb/mb_original.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Source = Lee Myung-bak's speech from 2007 <a href="https://youtu.be/OWq2HTOCeQY?t=51">(YouTube link)</a> </th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/mb/2_0145.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Target Speaker = <a href="https://www.kaggle.com/bryanpark/korean-single-speaker-speech-dataset">KSS</a> (Korean Single Speaker Dataset)</th></tr>
+        <tr><td class="audio-cell">
+          <div class="round-button" style="display: inline-block;" onclick="play('./audio/bonus/mb/mb_to_kss.wav', this)"><i class="fa fa-play fa-2x"></i></div></td>
+          <th class="audio-header">Converted - Cotatron (Korean version)</th></tr>
+      </tbody>
+    </table>    
+    </td>
+  </tr>
+
+</table>
 
 
 <p>
