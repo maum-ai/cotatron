@@ -83,24 +83,32 @@
     <audio controls="" id="player"></audio>
     <article>
       <header>
-        <h1>Webpage Work In Progress</h1>
         <h1>Audio samples from "Cotatron: Transcription-Guided Speech Encoder for Any-to-Many Voice Conversion without Parallel Data"</h1>
       </header>
     </article>
     <div><p><b>Paper:</b> <a href="https://arxiv.org/abs/????.?????">arXiv (TBD)</a> (To be submitted at InterSpeech 2020)</p></div>
     <div><p><b>Authors:</b> Seung-won Park, Doo-young Kim, Myun-chul Joe @ SNU, <a href="https://mindslab.ai">MINDsLab Inc.</a></p></div>
-    <div><p><b>Abstract:</b> We propose <i>Cotatron</i>, a transcription-guided speech encoder for speaker-free representation.
-      A voice conversion system is trained to reconstruct speech with Cotatron features, which is similar to previous methods based on Phonetic Posteriorgram (PPG). By training and evaluating our system with 108 speakers from VCTK dataset, we outperform the previous method in terms of speech naturalness and get competitive results on speaker classification accuracy.
-      Our system can also convert speech from speakers that are unseen during training, and use ASR transcription for a fully automated pipeline without losing the performance.</p></div>
+    <div><p><b>Abstract:</b>
+      We propose <i>Cotatron</i>, a transcription-guided speech encoder for speaker-independent linguistic representation.
+      Cotatron is based on the multispeaker TTS architecture and can be trained with conventional TTS datasets.
+      We train a voice conversion system to reconstruct speech with Cotatron features,
+      which is similar to the previous methods based on Phonetic Posteriorgram (PPG).
+      By training and evaluating our system with 108 speakers from the VCTK dataset,
+      we outperform the previous method in terms of both naturalness and speaker similarity.
+      Our system can also convert speech from speakers that are unseen during training,
+      and utilize ASR to automate the transcription with minimal reduction of the performance.
+      Audio samples are available at \url{https://mindslab-ai.github.io/cotatron},
+      and the code with a pre-trained model will be made available soon.
+    </p></div>
     <p>This page contains a set of audio samples in support of the paper: it is suggested that the reader listen to the samples in conjunction with reading the paper. </br>
-    <b>All utterances were unseen during training, and the results are uncurated (NOT cherry-picked), unless specified.</b></p>
+    <b>All utterances were unseen during training, and the results are uncurated (NOT cherry-picked) unless specified.</b></p>
 <!-- 
     <img src="./images/diagram.png" width="600" border="0" class="center">
     <br>
     <img src="./images/overall.png" width="600" border="0" class="center"> -->
     
     <p class="toc_title">Contents</p>
-    <p>Last updated at 2020.04.29</p>
+    <p>Last updated at 2020.05.06</p>
     <div id="toc_container">
     <ul>
       <li><a href="#m2m"> 1. Many-to-Many Conversion
