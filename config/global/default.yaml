@@ -1,0 +1,53 @@
+data:
+  lang: 'cmu'
+  text_cleaners: ['english_cleaners']
+  speakers: ['',]   # list of speaker ids (last elements of each metadata line)
+  train_dir: ''     # root path of data. The first elements of each metadata lines should be a relative path with respect to this.
+  train_meta: 'datasets/metadata/libritts_train_clean_100_audiopath_text_sid_shorterthan10s_atleast5min_train_filelist_22k.txt' # path of training data's metadata
+  val_dir: ''       # same as train_dir.
+  val_meta: 'datasets/metadata/libritts_train_clean_100_audiopath_text_sid_atleast5min_val_filelist_22k.txt' # path of validation data's metadata
+  cmudict_path: 'datasets/cmudict-0.7b_fix.txt'  # path of cmudict-0.7b_fix.txt
+###########################
+audio: # WARNING! This cannot be changed unlees you're planning to train the MelGAN vocoder by yourself.
+  n_mel_channels: 80
+  filter_length: 1024
+  hop_length: 256
+  win_length: 1024
+  sampling_rate: 22050
+  mel_fmin: 70.0
+  mel_fmax: 8000.0
+###########################
+chn:
+  # text encoder
+  encoder: 512
+  # speaker encoder
+  speaker:
+    cnn: [32, 32, 64, 64, 128, 128]
+    token: 256
+  # residual encoder
+  residual: [32, 32, 64, 64, 128, 128]
+  residual_out: 1
+  # TTS decoder
+  prenet: 256
+  postnet: 512
+  attention_rnn: 512
+  attention: 128
+  decoder_rnn: 512
+  static: 8
+  dynamic: 8
+###########################
+ker:
+  encoder: 5
+  ### DCA ###
+  static: 21
+  dynamic: 21
+  causal: 11
+  alpha: 0.1
+  beta: 0.9
+  ###########
+  postnet: 5
+###########################
+depth:
+  encoder: 3
+  prenet: 2
+  postnet: 5

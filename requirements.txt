@@ -1,0 +1,8 @@
+inflect
+librosa
+matplotlib
+omegaconf
+unidecode
+torch
+pytorch-lightning
+pyyaml

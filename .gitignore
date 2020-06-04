@@ -1,12 +1,12 @@
 # IDE configuration
 .idea/
 
+# configuration
+config/*/*.yaml
+!config/*/default.yaml
+
 # private notebook for audio cleaning
 docs/audio/audio_formatter.ipynb
-
-# configuration
-config/*
-!config/default.yaml
 
 # logs, checkpoints
 chkpt/
