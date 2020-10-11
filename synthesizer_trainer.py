@@ -11,7 +11,11 @@ from utils.loggers import SynthesizerLogger
 
 def main(args):
     model = Synthesizer(args)
-    hp = OmegaConf.load(args.config)
+
+    hp_global = OmegaConf.load(args.config[0])
+    hp_vc = OmegaConf.load(args.config[1])
+
+    hp = OmegaConf.merge(hp_global, hp_vc)
 
     save_path = os.path.join(hp.log.chkpt_dir, args.name)
     os.makedirs(save_path, exist_ok=True)
@@ -54,7 +58,7 @@ def main(args):
 
 if __name__ == '__main__':
     parser = ArgumentParser()
-    parser.add_argument('-c', '--config', type=str, required=True,
+    parser.add_argument('-c', '--config', nargs=2, type=str, required=True,
                         help="path of configuration yaml file")
     parser.add_argument('-g', '--gpus', type=str, default=None,
         help="Number of gpus to use (e.g. '0,1,2,3'). Will use all if not given.")

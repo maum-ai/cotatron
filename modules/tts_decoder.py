@@ -147,7 +147,7 @@ class TTSDecoder(nn.Module):
             mel_outputs.append(mel_out)
             alignments.append(prev_attn)
 
-            if self.hp.train.teacher_force.rate < random.random() and tfrate:
+            if tfrate and self.hp.train.teacher_force.rate < random.random():
                 decoder_input = self.prenet(mel_out, prenet_dropout)
             else:
                 decoder_input = x[len(mel_outputs)]
