@@ -8,6 +8,8 @@ Seung-won Park, Doo-young Kim, Myun-chul Joe @ SNU, [MINDsLab Inc.](https://mind
 Paper: https://arxiv.org/abs/2005.03295 (To appear in INTERSPEECH 2020)<br>
 Audio Samples: https://mindslab-ai.github.io/cotatron<br>
 
+**Update: Enjoy our pre-trained model with [Google Colab notebook](https://colab.research.google.com/drive/1L1sOs21l6CeU1Zavd5VMHGjo-aUUUGFp?usp=sharing)!**
+
 Abstract: *We propose Cotatron, a transcription-guided speech encoder for speaker-independent linguistic representation. Cotatron is based on the multispeaker TTS architecture and can be trained with conventional TTS datasets. We train a voice conversion system to reconstruct speech with Cotatron features, which is similar to the previous methods based on Phonetic Posteriorgram (PPG). By training and evaluating our system with 108 speakers from the VCTK dataset, we outperform the previous method in terms of both naturalness and speaker similarity. Our system can also convert speech from speakers that are unseen during training, and utilize ASR to automate the transcription with minimal reduction of the performance. Audio samples are available at https://mindslab-ai.github.io/cotatron, and the code with a pre-trained model will be made available soon.*
 
 
@@ -68,6 +70,7 @@ Here, all files with name other than `default.yaml` will be ignored from git (se
 - `config/global`: Global configs that are both used for training Cotatron & VC decoder.
   - Fill in the blanks of: `speakers`, `train_dir`, `train_meta`, `val_dir`, `val_meta`.
   - Example of speaker id list is shown in `datasets/metadata/libritts_vctk_speaker_list.txt`.
+  - When replicating the two-stage training process from our paper (training with LibriTTS and then LibriTTS+VCTK), please put both list of speaker ids from LibriTTS and VCTK at global config.
 - `config/cota`: Configs for training Cotatron.
   - You may want to change: `batch_size` for GPUs other than 32GB V100, or change `chkpt_dir` to save checkpoints in other disk.
 - `config/vc`: Configs for training VC decoder.
@@ -116,20 +119,9 @@ tensorboard --log_dir logs/vc --bind_all # VC decoder - Scalars, Images, Hparams
 
 ## Inference
 
-### Using Pre-trained Networks (WIP)
-
-TL; DR: We'll make the pre-traeind weights for Cotatron and MelGAN available soon.
-
-One of the major pain point of our system is that the Cotatron's alignment learning process is not always stable, as TTS models like Tacotron2 did.
-Hence, we're planing to make the pre-trained weights of Cotatron available.
-Furthermore, since the code for calculating mel-spectrogram is different from others (e.g. NVIDIA/tacotron2, seungwonpark/melgan),
-we're also planning to release the pre-trained weights of MelGAN available soon.
-Please check [Issue #1](https://github.com/mindslab-ai/cotatron/issues/1) to get notified abouth this in the future.
-
-### Inference Example
-
-TODO (will prepare a jupyter notebook after release of pre-trained networks)
-
+We provide a Jupyter Notebook script to provide the code for inference and show some visualizations with resulting audio.
+- https://colab.research.google.com/drive/1L1sOs21l6CeU1Zavd5VMHGjo-aUUUGFp?usp=sharing
+This notebook provides pre-trained weights for Cotatron-based VC system and MelGAN vocoder.
 
 ## Results
 
