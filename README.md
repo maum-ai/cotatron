@@ -1,5 +1,7 @@
 # Cotatron &mdash; Official PyTorch Implementation
 
+## Checkout our new project: Realistic Voice Conversion by Assembling Modern Speech Synthesis Techniques https://github.com/mindslab-ai/assem-vc
+
 ![](./docs/images/cotatron_fig1and2.png)
 
 **Cotatron: Transcription-Guided Speech Encoder for Any-to-Many Voice Conversion without Parallel Data**<br>
