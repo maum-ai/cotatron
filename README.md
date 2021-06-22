@@ -166,7 +166,7 @@ BSD 3-Clause License.
 }
 ```
 
-If you have a question or any kind of inquiries, please contact Seung-won Park at [swpark@mindslab.ai](mailto:swpark@mindslab.ai)
+If you have a question or any kind of inquiries, please contact Seung-won Park at [yyyyy@snu.ac.kr](mailto:yyyyy@snu.ac.kr)
 
 
 ## Repository structure
